@@ -1,0 +1,10 @@
+Resources:
+  BucketS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: STD21029
+  SSMParameters:
+    Type: AWS::SSM::Parameter
+    properties:
+      Name: BucketNameAndArn
+      Value: !Join ['', [!Ref BucketS3, !GetAt BucketS3.Arn]]
