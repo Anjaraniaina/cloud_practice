@@ -25,3 +25,4 @@ jobs:
         with:
           name: BucketS3
           template: no_stack.yaml
+          wait-until-stack-create-complete: true
