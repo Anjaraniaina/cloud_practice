@@ -1,3 +1,5 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template
 Resources:
   BucketS3:
     Type: AWS::S3::Bucket
@@ -6,6 +8,6 @@ Resources:
   SSMParameters:
     Type: AWS::SSM::Parameter
     properties:
-      Name: !Ref BucketS3
+      Name: BucketS3
       Type: String
       Value: !GetAtt BucketS3.Arn
